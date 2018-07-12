@@ -230,7 +230,7 @@ module.exports = function (hashFuncName, useUpperCaseForHash) {
       return input;
     } else {
       var hash = crypto.createHash(hashFuncName);
-      return hash.update(input).digest('hex');
+      return hash.update(Buffer.from(input, 'hex')).digest('hex');
     }
   }, hashFuncName,
 
